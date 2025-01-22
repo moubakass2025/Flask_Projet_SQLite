@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recherche dans la Base de Données</title>
+</head>
+<body>
+    <h1>Rechercher un Client</h1>
+    <form method="post" action="/fiche_nom/">
+        <label for="nom">Nom du Client :</label>
+        <input type="text" id="nom" name="nom" placeholder="Entrez le nom du client" required>
+        <br><br>
+        <button type="submit">Rechercher</button>
+    </form>
+    <br>
+    {% if data %}
+        <h2>Résultats de la recherche :</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Adresse</th>
+                    <th>Date de Création</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data %}
+                <tr>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                    <td>{{ row[3] }}</td>
+                    <td>{{ row[4] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% elif data is not none %}
+        <p>Aucun résultat trouvé pour le nom donné.</p>
+    {% endif %}
+</body>
+</html>
