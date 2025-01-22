@@ -62,7 +62,7 @@ def fiche_nom():
         return render_template('fiche_nom.html', data=data, nom=nom)
 
     # Afficher le formulaire de recherche
-    return render_template('formulaire_recherche_nom.html')
+    return render_template('formulaire_recherche.html')
 
 @app.route('/fiche_client/<int:post_id>')
 def Readfiche(post_id):
