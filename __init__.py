@@ -45,24 +45,19 @@ def authentification():
 @app.route('/fiche_nom/', methods=['GET', 'POST'])
 def fiche_nom():
     if not est_utilisateur():
-        # Rediriger vers la page d'authentification utilisateur si non authentifié
         return redirect(url_for('authentification_user'))
 
     if request.method == 'POST':
         nom = request.form['nom']
-
-        # Rechercher dans la base de données par nom
         conn = sqlite3.connect('database.db')
         cursor = conn.cursor()
         cursor.execute('SELECT * FROM clients WHERE nom = ?', (nom,))
         data = cursor.fetchall()
         conn.close()
 
-        # Rendre le template HTML avec les résultats de la recherche
-        return render_template('fiche_nom.html', data=data, nom=nom)
+        return render_template('formulaire_recherche_nom.html', data=data)
 
-    # Afficher le formulaire de recherche
-    return render_template('formulaire_authentification.html')
+    return render_template('formulaire_recherche_nom.html', data=None)
 
 @app.route('/fiche_client/<int:post_id>')
 def Readfiche(post_id):
