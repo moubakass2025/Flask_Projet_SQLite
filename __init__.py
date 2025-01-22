@@ -32,17 +32,7 @@ def authentification():
             session['authentifie'] = True
             # Rediriger vers la route lecture après une authentification réussie
             return redirect(url_for('lecture'))
-        else:
-            # Afficher un message d'erreur si les identifiants sont incorrects
-            return render_template('formulaire_authentification.html', error=True)
-
-    return render_template('formulaire_authentification.html', error=False)
-
-@app.route('/authentification_user', methods=['GET', 'POST'])
-def authentification_user():
-    if request.method == 'POST':
-        # Vérifier les identifiants utilisateur
-        if request.form['username'] == 'user' and request.form['password'] == '12345':
+        elif request.form['username'] == 'user' and request.form['password'] == '12345':
             session['utilisateur'] = True
             # Rediriger vers la route /fiche_nom/ après une authentification réussie
             return redirect(url_for('fiche_nom'))
