@@ -48,9 +48,9 @@ def authentification_user():
             return redirect(url_for('fiche_nom'))
         else:
             # Afficher un message d'erreur si les identifiants sont incorrects
-            return render_template('formulaire_authentification_user.html', error=True)
+            return render_template('formulaire_authentification.html', error=True)
 
-    return render_template('formulaire_authentification_user.html', error=False)
+    return render_template('formulaire_authentification.html', error=False)
 
 @app.route('/fiche_nom/', methods=['GET', 'POST'])
 def fiche_nom():
