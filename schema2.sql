@@ -44,16 +44,17 @@ CREATE TABLE IF NOT EXISTS Notifications (
 
 -- Insertion de données initiales (livres)
 INSERT INTO Livres (titre, auteur, categorie, annee_publication, isbn, stock) VALUES
-('Les Misérables', 'Victor Hugo', 'Roman', 1862, '9781234567890', 5),
+('Les Miserables', 'Victor Hugo', 'Roman', 1862, '9781234567890', 5),
 ('1984', 'George Orwell', 'Dystopie', 1949, '9781234567891', 3),
-('Le Petit Prince', 'Antoine de Saint-Exupéry', 'Conte', 1943, '9781234567892', 8),
+('Le Petit Prince', 'Antoine de Saint-Exupery', 'Conte', 1943, '9781234567892', 8),
 ('La Peste', 'Albert Camus', 'Philosophie', 1947, '9781234567893', 2),
-('L\'Étranger', 'Albert Camus', 'Philosophie', 1942, '9781234567894', 4),
+('L''Etranger', 'Albert Camus', 'Philosophie', 1942, '9781234567894', 4),
 ('Don Quichotte', 'Miguel de Cervantes', 'Aventure', 1605, '9781234567895', 1),
-('Germinal', 'Émile Zola', 'Roman', 1885, '9781234567896', 6),
+('Germinal', 'Emile Zola', 'Roman', 1885, '9781234567896', 6),
 ('Madame Bovary', 'Gustave Flaubert', 'Roman', 1857, '9781234567897', 7),
-('Crime et Châtiment', 'Fiodor Dostoïevski', 'Roman', 1866, '9781234567898', 3),
-('La Métamorphose', 'Franz Kafka', 'Fiction', 1915, '9781234567899', 5);
+('Crime et Chatiment', 'Fiodor Dostoievski', 'Roman', 1866, '9781234567898', 3),
+('La Metamorphose', 'Franz Kafka', 'Fiction', 1915, '9781234567899', 5);
+
 
 -- Insertion de données initiales (utilisateurs)
 INSERT INTO Utilisateurs (nom, prenom, email, mot_de_passe, type_utilisateur) VALUES
