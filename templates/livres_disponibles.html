@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livres Disponibles</title>
+</head>
+<body>
+    <h1>Liste des livres disponibles</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Titre</th>
+            <th>Auteur</th>
+            <th>Catégorie</th>
+            <th>Année de publication</th>
+            <th>Stock</th>
+        </tr>
+        {% for livre in livres %}
+        <tr>
+            <td>{{ livre[0] }}</td>
+            <td>{{ livre[1] }}</td>
+            <td>{{ livre[2] }}</td>
+            <td>{{ livre[3] }}</td>
+            <td>{{ livre[4] }}</td>
+            <td>{{ livre[5] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
