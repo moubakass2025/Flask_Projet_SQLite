@@ -95,7 +95,21 @@ def enregistrer_client():
     cursor.execute('INSERT INTO clients (created, nom, prenom, adresse) VALUES (?, ?, ?, ?)', (1002938, nom, prenom, "ICI"))
     conn.commit()
     conn.close()
-    return redirect('/consultation/')  # Rediriger vers la page d'accueil après l'enregistrement
+    return redirect('/consultation/')  # Rediriger vers la page d'accueil après l'enregistrement# Nouvelle route pour consulter les livres disponibles
+    
+@app.route('/consultation_livres', methods=['GET'])
+def consultation_livres():
+    """Affiche la liste des livres disponibles (stock > 0)."""
+    conn = sqlite3.connect('database.db')
+    cursor = conn.cursor()
+    # Récupérer les livres avec un stock disponible
+    cursor.execute('SELECT * FROM Livres WHERE stock > 0')
+    livres = cursor.fetchall()
+    conn.close()
+    # Rendre les résultats dans un template HTML (à créer) ou en JSON
+    return render_template('livres_disponibles.html', livres=livres)
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)
