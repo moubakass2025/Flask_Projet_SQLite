@@ -45,7 +45,7 @@ def authentification():
 @app.route('/fiche_nom/', methods=['GET', 'POST'])
 def fiche_nom():
     if not est_utilisateur():
-        return redirect(url_for('authentification_user'))
+        return redirect(url_for('authentification'))
 
     if request.method == 'POST':
         nom = request.form['nom']
