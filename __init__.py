@@ -100,7 +100,7 @@ def enregistrer_client():
 @app.route('/consultation_livres', methods=['GET'])
 def consultation_livres():
     """Affiche la liste des livres disponibles (stock > 0)."""
-    conn = sqlite3.connect('database.db')
+    conn = sqlite3.connect('bibliotheque.db.db')
     cursor = conn.cursor()
     # Récupérer les livres avec un stock disponible
     cursor.execute('SELECT * FROM Livres WHERE stock > 0')
